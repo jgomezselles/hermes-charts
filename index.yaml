@@ -3,6 +3,15 @@ entries:
   hermes:
   - apiVersion: v1
     appVersion: "1.0"
+    created: "2024-02-24T14:14:05.418467602Z"
+    description: Hermes helm chart for Kubernetes
+    digest: fe420593823086130651c71ec0e37c09bc5ad8bc51dab581cbb83d5387aa6046
+    name: hermes
+    urls:
+    - https://github.com/jgomezselles/hermes-charts/releases/download/hermes-0.0.3/hermes-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
+    appVersion: "1.0"
     created: "2024-02-24T13:38:08.095057736Z"
     description: Hermes helm chart for Kubernetes
     digest: f7e918c01ccb2f3f61998f66eb87445f3a089f27f404152ffe93f09803ae6faf
@@ -10,4 +19,14 @@ entries:
     urls:
     - https://github.com/jgomezselles/hermes-charts/releases/download/hermes-0.0.2/hermes-0.0.2.tgz
     version: 0.0.2
-generated: "2024-02-24T13:38:08.09507062Z"
+  hermes-job:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2024-02-24T14:14:05.522081792Z"
+    description: Hermes job helm chart for Kubernetes
+    digest: c7ce07c672ac2383130c7788cb2c3a54a96dceed468aed5afb0ac4e1595649b3
+    name: hermes-job
+    urls:
+    - https://github.com/jgomezselles/hermes-charts/releases/download/hermes-job-0.0.1/hermes-job-0.0.1.tgz
+    version: 0.0.1
+generated: "2024-02-24T14:14:05.522091551Z"
