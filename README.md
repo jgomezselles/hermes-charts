@@ -1,2 +1,21 @@
 # hermes-charts
-Repo to host hermes helmcharts
+## Usage
+
+[Helm](https://helm.sh) must be installed to use the charts.  Please refer to
+Helm's [documentation](https://helm.sh/docs) to get started.
+
+Once Helm has been set up correctly, add the repo as follows:
+
+  helm repo add hermes-charts https://jgomezselles.github.io/hermes-charts
+
+If you had already added this repo earlier, run `helm repo update` to retrieve
+the latest versions of the packages.  You can then run `helm search repo
+hermes charts` to see the charts.
+
+To install the hermes chart:
+
+    helm install my-hermes hermes-charts/hermes
+
+To uninstall the chart:
+
+    helm delete my-hermes
