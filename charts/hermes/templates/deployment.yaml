@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.hermes.name }}
+  name: {{ include "hermes.name" . }}
   labels:
-    app.kubernetes.io/name: {{ .Values.hermes.name }}
+    app.kubernetes.io/name: {{ include "hermes.name" . }}
     helm.sh/chart: {{ template "hermes.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}

@@ -1,15 +1,15 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ .Values.hermes.name }}-job
+  name: {{ include "hermes.name" . }}-job
   labels:
-    app.kubernetes.io/name: {{ .Values.hermes.name }}
+    app.kubernetes.io/name: {{ include "hermes.name" . }}
     helm.sh/chart: {{ template "hermes.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 
 spec:
-  schedule: "10 * * * *"
+  schedule: {{ .Values.schedule }}
   jobTemplate:
     metadata:
       labels:

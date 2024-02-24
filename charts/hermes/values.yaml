@@ -8,8 +8,6 @@ global:
   istio:
     sidecar:
       inject: false
-hermes:
-  name: hermes
 
 image:
   repository: ghcr.io/jgomezselles/hermes
