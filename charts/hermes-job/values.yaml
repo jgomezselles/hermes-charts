@@ -2,6 +2,23 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+## Global variables
+global:
+  istio:
+    sidecar:
+      inject: false
+  hermes:
+    endpoint:
+    port:
+    timeout:
+    metrics_endpoint:
+    repo:
+    tag:
+    cm:
+    rate:
+    print:
+    time:
+
 schedule: "10 * * * *"
 endpoint: "mock-mock-ns.apps.baremetal-cluster-jg.qe.devcluster.openshift.com"
 

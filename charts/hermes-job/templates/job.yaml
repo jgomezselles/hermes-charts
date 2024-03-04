@@ -20,25 +20,25 @@ spec:
       template:
         spec:
           volumes:
-            - name: {{ .Values.script.cm }}-volume
+            - name: {{ .Values.global.hermes.cm | default .Values.script.cm }}-volume
               configMap:
-                 name: {{ .Values.script.cm }}
+                 name: {{ .Values.global.hermes.cm | default .Values.script.cm }}
           containers:
           - name: {{ .Chart.Name }}
-            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            image: "{{ .Values.global.hermes.repo | default .Values.image.repository }}:{{ .Values.global.hermes.tag | default .Values.image.tag }}"
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             command:
             - hermes
-            - -r5000
-            - -p1
-            - -t1800
+            - -r{{ .Values.global.hermes.rate | default .Values.rate }}
+            - -p{{ .Values.global.hermes.print | default .Values.print }}
+            - -t{{ .Values.global.hermes.time | default .Values.time }}
             volumeMounts:
-            - name: {{ .Values.script.cm }}-volume
+            - name: {{ .Values.global.hermes.cm | default .Values.script.cm }}-volume
               mountPath: "/etc/scripts/"
               readOnly: true
             env:          
             - name: "OTLP_METRICS_ENDPOINT"
-              value: {{ .Values.o11y.metrics_endpoint }}
+              value: {{ .Values.global.hermes.metrics_endpoint | default .Values.o11y.metrics_endpoint }}
             - name: "OTLP_TRACES_ENDPOINT"
-              value: {{ .Values.o11y.traces_endpoint }}
+              value: {{ .Values.global.hermes.traces_endpoint | default .Values.o11y.traces_endpoint }}
           restartPolicy: Never
